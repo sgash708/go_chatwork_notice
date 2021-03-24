@@ -149,6 +149,22 @@ func main() {
 		errLog(message)
 		log.Fatalln(message)
 	}
+
+	err = page.FindByXPath(`//*[@id="content"]/form[2]/div/table/thead/tr/th[7]/a`).Click()
+	if err != nil {
+		errLog("要素をクリックできませんでした。")
+		log.Fatalln(err)
+	}
+
+	// HTML取得
+	getAll, err = page.HTML()
+	if err != nil {
+		errLog("遷移後のHTML(一覧)取得失敗しました。")
+		log.Fatalln(err)
+	}
+	readerGetAll = strings.NewReader(getAll)
+	contentDom, _ = goquery.NewDocumentFromReader(readerGetAll)
+
 	// 行数取得
 	rawCnt := len(contentDom.Find("#content > form:nth-child(5) > div > table > tbody > tr").Nodes)
 
