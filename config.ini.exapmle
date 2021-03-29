@@ -1,0 +1,11 @@
+[web]
+url = https://user:password@example.com
+
+[login]
+username = your nice username
+password = your nice password
+
+[chatwork]
+cwToken = your nice token
+cwURL   = https://xxxxxxxxxxx
+cw2Me   = xxxxxxxxxx
