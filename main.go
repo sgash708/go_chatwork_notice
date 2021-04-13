@@ -230,5 +230,5 @@ func main() {
 }
 
 func errLog(message string) {
-	ChatWorkMessagePost(Scraping.Chatwork2Me + time.Now().Format(DateLayout) + message)
+	ChatWorkMessagePost(Scraping.Chatwork2Me + time.Now().Format(DateLayout) + "\n[code]" + message + "[/code]")
 }
